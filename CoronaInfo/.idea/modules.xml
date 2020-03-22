@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Corona Info.iml" filepath="$PROJECT_DIR$/Corona Info.iml" group="Corona Info" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="Corona Info/app" />
+    </modules>
+  </component>
+</project>
