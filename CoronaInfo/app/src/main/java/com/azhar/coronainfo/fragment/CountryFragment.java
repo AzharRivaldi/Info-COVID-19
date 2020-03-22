@@ -41,8 +41,12 @@ public class CountryFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_country, container, false);
+        return inflater.inflate(R.layout.fragment_country, container, false);
+    }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         mProgressApp = new ProgressDialog(getActivity());
         mProgressApp.setTitle("Mohon tunggu");
         mProgressApp.setCancelable(false);
@@ -87,7 +91,5 @@ public class CountryFragment extends Fragment {
                 pieChart.setData(pieData);
             }
         });
-        return view;
     }
-
 }
