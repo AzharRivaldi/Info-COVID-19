@@ -7,6 +7,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.azhar.coronainfo.R;
 import com.azhar.coronainfo.fragment.RiwayatFragment;
@@ -31,15 +33,17 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (savedInstanceState == null) {
+            RingkasanFragment ringkasanFragment = new RingkasanFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.flMain, ringkasanFragment)
+                    .commit();
+        }
+
         tvToday = findViewById(R.id.tvDate);
         Date dateNow = Calendar.getInstance().getTime();
         hariIni = (String) DateFormat.format("EEEE", dateNow);
-
-        RingkasanFragment ringkasanFragment = new RingkasanFragment();
-        getSupportFragmentManager()
-                .beginTransaction()
-                .add(R.id.flMain, ringkasanFragment)
-                .commit();
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNav);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
